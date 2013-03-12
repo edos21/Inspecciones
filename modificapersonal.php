@@ -1,3 +1,8 @@
+<?php 
+	
+	include 'backend/query-uno.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -46,27 +51,34 @@
 						<th>Apellidos</th>
 					</thead>
 					<tbody>
+						<?php 
+
+							foreach($contents as $content): 
+							$cedula = $content['cedula'];	
+
+						?>
 						<tr>
 							<td>
-								111111
+								<?php echo $cedula; ?>
 							</td>
 							<td>
-								PRUEBA HTML
+								<?php echo $content['nombres']; ?>
 							</td>
 							<td>
-								PRUEBA HTML
+								<?php echo $content['apellidos']; ?>
 							</td>
 							<td>
 								<form method="post" action="modificarpersonal.php">
 									<input type="hidden" name="cedula">
 									<input type="submit" class="orange" value="Modificar">
 								</form>
-								<form method="post" action="eliminarpersonal.php">
-									<input type="hidden" name="cedula">
+								<form method="post" action="backend/eliminarpersonal.php">
+									<input type="hidden" name="cedula" value="<?php echo $cedula; ?>">
 									<input type="submit" class="red" value="Eliminar">
 								</form>
 							</td>
 						</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
