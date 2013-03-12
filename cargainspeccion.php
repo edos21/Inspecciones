@@ -39,7 +39,7 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Carga de Inspecciones</h3>
-				<form method="post" action="guardainspeccion.php">
+				<form method="post" action="backend/cargainspeccion.php">
 					<label for="rif">RIF</label>
 					<input type="text" name="rif" id="rif" placeholder="RIF de la Empresa">
 					<label for="empresa">Empresa</label>

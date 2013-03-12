@@ -39,7 +39,7 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Cargar Personal</h3>
-				<form method="post" action="guardapersonal.php">
+				<form method="post" action="backend/cargapersonal.php">
 					<label for="cedula">Cedula</label>
 					<input type="text" name="cedula" id="cedula" placeholder="Ingresar Cedula">
 					<label for="grado">Grado</label>
