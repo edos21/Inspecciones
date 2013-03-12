@@ -4,10 +4,10 @@
 
 	try {
 
-		$sql = 'DELETE FROM personal WHERE cedula = :cedula';
+		$sql = 'DELETE FROM cinspecciones WHERE id = :id';
 
 		$s = $pdo->prepare($sql);
-		$s->bindValue(':cedula',$_POST['cedula']);
+		$s->bindValue(':id',$_POST['id']);
 		$s->execute();
 
 	}
@@ -20,6 +20,6 @@
 
 ?>
 <script type="text/javascript">
-	alert('Personal eliminado.');
-	location.href = '../modificapersonal.php';
+	alert('Inspeccion eliminada.');
+	location.href = '../modificainspeccion.php';
 </script>

@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-dos.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -46,27 +51,29 @@
 						<th>Region</th>
 					</thead>
 					<tbody>
+						<?php foreach($contents as $content): ?>
 						<tr>
 							<td>
-								111111
+								<?php echo $content['rif']; ?>
 							</td>
 							<td>
-								PRUEBA HTML
+								<?php echo $content['empresa']; ?>
 							</td>
 							<td>
-								PRUEBA HTML
+								<?php echo $content['region']; ?>
 							</td>
 							<td>
 								<form method="post" action="modificarinspeccion.php">
 									<input type="hidden" name="id">
 									<input type="submit" class="orange" value="Modificar">
 								</form>
-								<form method="post" action="eliminarinspeccion.php">
-									<input type="hidden" name="id">
+								<form method="post" action="backend/eliminarinspeccion.php">
+									<input type="hidden" name="id" value="<?php echo $content['id']; ?>">
 									<input type="submit" class="red" value="Eliminar">
 								</form>
 							</td>
 						</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
