@@ -168,3 +168,10 @@ display:block;
 	resize: none;
 
 }
+
+#cpersonal table{
+
+	width: 100%;
+	margin: 0 70px;
+
+}

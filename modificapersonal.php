@@ -17,7 +17,7 @@
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
-							<li><a href="modificapersonal.php">Modificar/Eliminar</a></li>
+							<li><a href="#">Modificar/Eliminar</a></li>
 						</ul>
 					</li>
 					<li><a>Inspecciones</a>
@@ -36,6 +36,40 @@
 				</ul>
 			</nav>
 		</header>
-
+		<div id="main">
+			<div class="col_12" id="cpersonal">
+				<h3>Modificar Personal</h3>
+				<table class="striped">
+					<thead>
+						<th>Cedula</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								111111
+							</td>
+							<td>
+								PRUEBA HTML
+							</td>
+							<td>
+								PRUEBA HTML
+							</td>
+							<td>
+								<form method="post" action="modificarpersonal.php">
+									<input type="hidden" name="cedula">
+									<input type="submit" class="orange" value="Modificar">
+								</form>
+								<form method="post" action="eliminarpersonal.php">
+									<input type="hidden" name="cedula">
+									<input type="submit" class="red" value="Eliminar">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>

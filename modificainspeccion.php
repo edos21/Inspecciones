@@ -23,7 +23,7 @@
 					<li><a>Inspecciones</a>
 						<ul>
 							<li><a href="cargainspeccion.php">Cargar</a></li>
-							<li><a href="modificainspeccion.php">Modificar/Eliminar</a></li>
+							<li><a href="#">Modificar/Eliminar</a></li>
 						</ul>
 					</li>
 					<li><a>Reportes</a>
@@ -36,6 +36,40 @@
 				</ul>
 			</nav>
 		</header>
-
+		<div id="main">
+			<div class="col_12" id="cpersonal">
+				<h3>Modificar Inspecciones</h3>
+				<table class="striped">
+					<thead>
+						<th>RIF</th>
+						<th>Empresa</th>
+						<th>Region</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								111111
+							</td>
+							<td>
+								PRUEBA HTML
+							</td>
+							<td>
+								PRUEBA HTML
+							</td>
+							<td>
+								<form method="post" action="modificarinspeccion.php">
+									<input type="hidden" name="id">
+									<input type="submit" class="orange" value="Modificar">
+								</form>
+								<form method="post" action="eliminarinspeccion.php">
+									<input type="hidden" name="id">
+									<input type="submit" class="red" value="Eliminar">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>
