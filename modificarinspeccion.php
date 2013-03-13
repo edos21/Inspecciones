@@ -22,7 +22,7 @@
 					</li>
 					<li><a>Inspecciones</a>
 						<ul>
-							<li><a href="#">Cargar</a></li>
+							<li><a href="cargainpeccion.php">Cargar</a></li>
 							<li><a href="modificainspeccion.php">Modificar/Eliminar</a></li>
 						</ul>
 					</li>
@@ -38,8 +38,8 @@
 		</header>
 		<div id="main">
 			<div class="col_12" id="cpersonal">
-				<h3>Carga de Inspecciones</h3>
-				<form method="post" action="backend/cargainspeccion.php">
+				<h3>Modificar Inspecciones</h3>
+				<form method="post" action="backend/modificarinspeccion.php">
 					<label for="rif">RIF</label>
 					<input type="text" name="rif" id="rif" placeholder="RIF de la Empresa">
 					<label for="empresa">Empresa</label>
@@ -59,7 +59,7 @@
 						<option value="id">Nombres + Apellidos</option>
 						<option value="id">Nombres + Apellidos</option>
 					</select><br><br>
-					<input type="submit" class="green" value="Guardar">
+					<input type="submit" class="green" value="Modificar">
 					<input type="reset" class="orange" value="Cancelar">
 				</form>
 			</div>

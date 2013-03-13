@@ -1,8 +1,3 @@
-<?php 
-	
-	include 'backend/query-uno.php';
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,11 +13,11 @@
 		<header>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
-							<li><a href="#">Modificar/Eliminar</a></li>
+							<li><a href="modificapersonal.php">Modificar/Eliminar</a></li>
 						</ul>
 					</li>
 					<li><a>Inspecciones</a>
@@ -44,43 +39,22 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Modificar Personal</h3>
-				<table class="striped">
-					<thead>
-						<th>Cedula</th>
-						<th>Nombres</th>
-						<th>Apellidos</th>
-					</thead>
-					<tbody>
-						<?php 
-
-							foreach($contents as $content): 
-							$cedula = $content['cedula'];	
-
-						?>
-						<tr>
-							<td>
-								<?php echo $cedula; ?>
-							</td>
-							<td>
-								<?php echo $content['nombres']; ?>
-							</td>
-							<td>
-								<?php echo $content['apellidos']; ?>
-							</td>
-							<td>
-								<form method="post" action="modificarpersonal.php">
-									<input type="hidden" name="cedula">
-									<input type="submit" class="orange" value="Modificar">
-								</form>
-								<form method="post" action="backend/eliminarpersonal.php">
-									<input type="hidden" name="cedula" value="<?php echo $cedula; ?>">
-									<input type="submit" class="red" value="Eliminar">
-								</form>
-							</td>
-						</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
+				<form method="post" action="backend/modificarpersonal.php">
+					<label for="cedula">Cedula</label>
+					<input type="text" name="cedula" id="cedula" placeholder="Ingresar Cedula">
+					<label for="grado">Grado</label>
+					<input type="text" name="grado" id="grado" placeholder="Ingresar Grado"><br><br>
+					<label for="apellidos">Apellidos</label>
+					<input type="text" name="apellidos" id="apellidos" placeholder="Ingresar Apellidos">
+					<label for="nombres">Nombres</label>
+					<input type="text" name="nombres" id="nombres" placeholder="Ingresar Nombres"><br><br>
+					<label for="direccion">Ingresar Direccion</label><br>
+					<textarea name="direccion" id="direccion" placeholder="Direccion" cols="55"></textarea><br><br>
+					<label for="departamento">Departamento</label>
+					<input type="text" name="departamento" id="departamento" placeholder="Ingresar Departamento"><br><br>
+					<input type="submit" class="green" value="Modificar">
+					<input type="reset" class="orange" value="Cancelar">
+				</form>
 			</div>
 		</div>
 	</body>
