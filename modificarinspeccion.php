@@ -54,7 +54,6 @@
 					<input type="text" name="ut" id="ut" placeholder="Unidades Tributarias">
 					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
 					<label for="inspectores">Inspectores</label>
-					<!--Cargar en value el id del personal de la BD-->
 					<select id="inspectores" name="inspectores" multiple="multiple" class="fancy">
 						<option value="id">Nombres + Apellidos</option>
 						<option value="id">Nombres + Apellidos</option>
