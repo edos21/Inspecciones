@@ -34,5 +34,5 @@
 ?>
 <script type="text/javascript">
 	alert('Personal modificado.');
-	location.href = '../modificainspeccion.php';
+	location.href = '../modificapersonal.php';
 </script>
