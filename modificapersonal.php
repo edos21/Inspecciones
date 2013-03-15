@@ -69,7 +69,7 @@
 							</td>
 							<td>
 								<form method="post" action="modificarpersonal.php">
-									<input type="hidden" name="cedula">
+									<input type="hidden" name="cedula" value="<?php echo $cedula; ?>">
 									<input type="submit" class="orange" value="Modificar">
 								</form>
 								<form method="post" action="backend/eliminarpersonal.php">
