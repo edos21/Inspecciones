@@ -51,7 +51,13 @@
 						<th>Region</th>
 					</thead>
 					<tbody>
-						<?php foreach($contents as $content): ?>
+						<?php 
+
+							foreach($contents as $content): 
+
+							$id = $content['id'];		
+
+						?>
 						<tr>
 							<td>
 								<?php echo $content['rif']; ?>
@@ -64,11 +70,11 @@
 							</td>
 							<td>
 								<form method="post" action="modificarinspeccion.php">
-									<input type="hidden" name="id">
+									<input type="hidden" name="id" value="<?php echo $id; ?>">
 									<input type="submit" class="orange" value="Modificar">
 								</form>
 								<form method="post" action="backend/eliminarinspeccion.php">
-									<input type="hidden" name="id" value="<?php echo $content['id']; ?>">
+									<input type="hidden" name="id" value="<?php echo $id; ?>">
 									<input type="submit" class="red" value="Eliminar">
 								</form>
 							</td>

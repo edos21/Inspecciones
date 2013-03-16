@@ -45,26 +45,44 @@
 			<div class="col_12" id="cpersonal">
 				<h3>Modificar Inspecciones</h3>
 				<form method="post" action="backend/modificarinspeccion.php">
+					<?php foreach($contents as $content): ?>
 					<label for="rif">RIF</label>
-					<input type="text" name="rif" id="rif" placeholder="RIF de la Empresa">
+					<input type="text" name="rif" id="rif" value="<?php echo $content['rif']; ?>">
 					<label for="empresa">Empresa</label>
-					<input type="text" name="empresa" id="empresa" placeholder="Nombre de la Empresa"><br><br>
+					<input type="text" name="empresa" id="empresa" value="<?php echo $content['empresa']; ?>"><br><br>
 					<label for="telefono">Telefono</label>
-					<input type="text" name="telefono" id="telefono" placeholder="Telefono de la Empresa">
+					<input type="text" name="telefono" id="telefono" value="<?php echo $content['telefono']; ?>">
 					<label for="region">Region</label>
-					<input type="text" name="region" id="region" placeholder="Region de la Empresa"><br><br>
+					<input type="text" name="region" id="region" value="<?php echo $content['region']; ?>"><br><br>
 					<label for="direccion">Direccion</label><br>
-					<textarea name="direccion" id="direccion" placeholder="Direccion de la Empresa" cols="55"></textarea><br><br>
+					<textarea name="direccion" id="direccion" cols="55">
+						<?php echo $content['direccion']; ?>
+					</textarea><br><br>
 					<label for="ut">U.T.</label>
-					<input type="text" name="ut" id="ut" placeholder="Unidades Tributarias">
+					<input type="text" name="ut" id="ut" value="<?php echo $content['unidadest']; ?>">
+					<?php 
+
+						$vehiculo = $content['vehiculo'];
+
+						if ($vehiculo != 'Si') {
+					?>		
 					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
+					<?php
+						
+						} else {
+
+					?>
+					Posee Vehiculo <input type="checkbox" name="vehiculo" checked="checked"><br><br>	
+					<?php } ?>
 					<label for="inspectores">Inspectores</label>
 					<select id="inspectores" name="inspectores" multiple="multiple" class="fancy">
 						<option value="id">Nombres + Apellidos</option>
 						<option value="id">Nombres + Apellidos</option>
 					</select><br><br>
+					<input type="hidden" value="<?php echo $content['id']; ?>" name="id">
 					<input type="submit" class="green" value="Modificar">
 					<input type="reset" class="orange" value="Cancelar">
+					<?php endforeach; ?>
 				</form>
 			</div>
 		</div>
