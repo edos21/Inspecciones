@@ -2,6 +2,8 @@
 
 	include 'includes/conexion.php';
 
+	$id = $_POST['id'];
+
 	$vehiculo = isset($_POST['vehiculo']);
 	
 	if ($vehiculo == true) {
@@ -31,7 +33,7 @@
 		$s->bindValue(':direccion',$_POST['direccion']);
 		$s->bindValue(':unidadest',$_POST['ut']);
 		$s->bindValue(':vehiculo',$p_vehiculo);
-		$s->bindValue(':id',$_POST['id']);
+		$s->bindValue(':id',$id);
 		$s->execute();
 
 	}
@@ -41,6 +43,36 @@
 		echo 'Ha ocurrido un error.' . $e->getMessage();
 
 	}
+
+	$inspectores = $_POST['inspectores'];
+
+	if ($inspectores) {
+
+		foreach($inspectores as $inspector):
+
+			try {
+
+				$sql = 'UPDATE personal_inspeccion SET
+				id_personal = :id_personal WHERE 
+				id_inspeccion = :id_inspeccion';
+
+				$s = $pdo->prepare($sql);
+				$s->bindValue(':id_inspeccion',$id);
+				$s->bindValue(':id_personal',$inspector);
+				$s->execute();
+
+			}
+
+			catch (PDOException $e) {
+
+				echo 'Ha ocurrido un error.' . $e->getMessage();
+				exit();
+
+			}
+
+		endforeach;
+
+	}	
 
 ?>
 <script type="text/javascript">

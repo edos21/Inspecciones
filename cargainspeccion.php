@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-personal.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -55,9 +60,10 @@
 					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
 					<label for="inspectores">Inspectores</label>
 					<!--Cargar en value el id del personal de la BD-->
-					<select id="inspectores" name="inspectores" multiple="multiple" class="fancy">
-						<option value="id">Nombres + Apellidos</option>
-						<option value="id">Nombres + Apellidos</option>
+					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
+						<?php foreach ($ins as $in): ?>
+						<option value="<?php echo $in['id']; ?>"><?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
+						<?php endforeach; ?>
 					</select><br><br>
 					<input type="submit" class="green" value="Guardar">
 					<input type="reset" class="orange" value="Cancelar">
