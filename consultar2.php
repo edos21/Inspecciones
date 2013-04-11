@@ -13,7 +13,7 @@
 		<header>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
@@ -36,6 +36,71 @@
 				</ul>
 			</nav>
 		</header>
-
+		<div id="main">
+			<div class="col_12" id="cpersonal">
+				<h3>Reporte Por Empresa</h3>
+				<table class="striped">
+					<thead>
+						<th>Empresa</th>
+						<th>Personal</th>
+						<th>U.T.</th>
+						<th>Vehiculo</th>
+						<th>Habitabilidad</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Edosistems
+							</td>
+							<td>
+								Teniente David Palacios
+								<br>Capitan Sanduche
+								<br>Soldadito Yonaikel
+							</td>
+							<td>
+								10
+							</td>
+							<td>
+								5
+							</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Edosistems
+							</td>
+							<td>
+								Soldadito Yonaikel
+							</td>
+							<td>
+								10
+							</td>
+							<td>
+								5
+							</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								Total
+							</th>
+							<td>
+								20
+							</td>
+							<td>
+								10
+							</td>
+							<td>
+								16
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>

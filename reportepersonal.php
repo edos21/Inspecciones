@@ -13,7 +13,7 @@
 		<header>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
@@ -30,12 +30,25 @@
 						<ul>
 							<li><a href="reportefecha.php">Por Fecha</a></li>
 							<li><a href="reporteempresa.php">Por Empresa</a></li>
-							<li><a href="reportepersonal.php">Por Personal</a></li>
+							<li><a href="#">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
 			</nav>
 		</header>
-
+		<div id="main">
+			<div class="col_12" id="cpersonal">
+				<h3>Reporte Por Personal</h3>
+				<form method="post" action="consultar3.php">
+					<label for="nombre">Nombre</label>
+					<select id="nombre" name="nombre">
+						<option>Seleccione el Personal</option>
+						<!--Cargar options con los nombres de el personal, cargas unicas, usando SELECT DISTINCT "rango + nombre + apellido"-->
+					</select>
+					<br><br>
+					<input type="submit" class="green" value="Buscar">
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

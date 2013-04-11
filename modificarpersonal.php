@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-tres.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,9 +33,9 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="">Reporte 1</a></li>
-							<li><a href="">Reporte 2</a></li>
-							<li><a href="">Reporte 3</a></li>
+							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="reporteempresa.php">Por Empresa</a></li>
+							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -40,20 +45,23 @@
 			<div class="col_12" id="cpersonal">
 				<h3>Modificar Personal</h3>
 				<form method="post" action="backend/modificarpersonal.php">
+					<?php foreach($contents as $content): ?>
 					<label for="cedula">Cedula</label>
-					<input type="text" name="cedula" id="cedula" placeholder="Ingresar Cedula">
+					<input type="text" name="cedula" id="cedula" value="<?php echo $content['cedula']; ?>">
 					<label for="grado">Grado</label>
-					<input type="text" name="grado" id="grado" placeholder="Ingresar Grado"><br><br>
+					<select name="grado" id="grado">
+						<option value="id_grado">Grado</option>
+					</select><br><br>
 					<label for="apellidos">Apellidos</label>
-					<input type="text" name="apellidos" id="apellidos" placeholder="Ingresar Apellidos">
+					<input type="text" name="apellidos" id="apellidos" value="<?php echo $content['apellidos']; ?>">
 					<label for="nombres">Nombres</label>
-					<input type="text" name="nombres" id="nombres" placeholder="Ingresar Nombres"><br><br>
-					<label for="direccion">Ingresar Direccion</label><br>
-					<textarea name="direccion" id="direccion" placeholder="Direccion" cols="55"></textarea><br><br>
+					<input type="text" name="nombres" id="nombres" value="<?php echo $content['nombres']; ?>"><br><br>
 					<label for="departamento">Departamento</label>
-					<input type="text" name="departamento" id="departamento" placeholder="Ingresar Departamento"><br><br>
+					<input type="text" name="departamento" id="departamento" value="<?php echo $content['departamento']; ?>"><br><br>
+					<input type="hidden" value="<?php echo $content['id']; ?>" name="id">
 					<input type="submit" class="green" value="Modificar">
 					<input type="reset" class="orange" value="Cancelar">
+					<?php endforeach; ?>
 				</form>
 			</div>
 		</div>

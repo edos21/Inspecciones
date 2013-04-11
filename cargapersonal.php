@@ -28,9 +28,9 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="">Reporte 1</a></li>
-							<li><a href="">Reporte 2</a></li>
-							<li><a href="">Reporte 3</a></li>
+							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="reporteempresa.php">Por Empresa</a></li>
+							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -43,13 +43,13 @@
 					<label for="cedula">Cedula</label>
 					<input type="text" name="cedula" id="cedula" placeholder="Ingresar Cedula">
 					<label for="grado">Grado</label>
-					<input type="text" name="grado" id="grado" placeholder="Ingresar Grado"><br><br>
+					<select name="grado" id="grado">
+						<option value="id_grado">Grado</option>
+					</select><br><br>
 					<label for="apellidos">Apellidos</label>
 					<input type="text" name="apellidos" id="apellidos" placeholder="Ingresar Apellidos">
 					<label for="nombres">Nombres</label>
 					<input type="text" name="nombres" id="nombres" placeholder="Ingresar Nombres"><br><br>
-					<label for="direccion">Ingresar Direccion</label><br>
-					<textarea name="direccion" id="direccion" placeholder="Direccion" cols="55"></textarea><br><br>
 					<label for="departamento">Departamento</label>
 					<input type="text" name="departamento" id="departamento" placeholder="Ingresar Departamento"><br><br>
 					<input type="submit" class="green" value="Guardar">

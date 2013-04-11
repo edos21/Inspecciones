@@ -18,7 +18,7 @@
 		<header>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
@@ -33,9 +33,9 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="">Reporte 1</a></li>
-							<li><a href="">Reporte 2</a></li>
-							<li><a href="">Reporte 3</a></li>
+							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="reporteempresa.php">Por Empresa</a></li>
+							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -69,7 +69,7 @@
 							</td>
 							<td>
 								<form method="post" action="modificarpersonal.php">
-									<input type="hidden" name="cedula">
+									<input type="hidden" name="cedula" value="<?php echo $cedula; ?>">
 									<input type="submit" class="orange" value="Modificar">
 								</form>
 								<form method="post" action="backend/eliminarpersonal.php">

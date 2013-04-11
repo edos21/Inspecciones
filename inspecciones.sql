@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-03-2013 a las 22:44:21
+-- Tiempo de generación: 08-04-2013 a las 18:06:38
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -36,14 +36,48 @@ CREATE TABLE IF NOT EXISTS `cinspecciones` (
   `unidadest` varchar(200) DEFAULT NULL,
   `vehiculo` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `cinspecciones`
 --
 
 INSERT INTO `cinspecciones` (`id`, `rif`, `empresa`, `telefono`, `region`, `direccion`, `unidadest`, `vehiculo`) VALUES
-(3, '0-12345678-1', 'OVPersonal', '0251-0000000', 'Lara', 'Calle 20 entre carrera 25 y avenida Venezuela', '1000', 'No');
+(21, 'dfgdf', 'fdgdf', 'gdfg', 'fd', 'gdfgd					', 'fgdfg', 'Si'),
+(22, 'V-12586321-E', 'Samsung', '0212-1223565', 'Caracas', '						Caracas					', '100', 'Si'),
+(23, NULL, 'Edosistems', '123', 'Lara', 'Carrera 14', '10', 'Si');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grado`
+--
+
+CREATE TABLE IF NOT EXISTS `grado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Volcado de datos para la tabla `grado`
+--
+
+INSERT INTO `grado` (`id`, `descripcion`) VALUES
+(1, 'General de Brigada'),
+(2, 'Coronel'),
+(3, 'Teniente Coronel'),
+(4, 'Mayor'),
+(5, 'Capitan'),
+(6, 'Primer Teniente'),
+(7, 'Teniente'),
+(8, 'Sargento Supervisor'),
+(9, 'Sargento Ayudante'),
+(10, 'Sargento Mayor 1'),
+(11, 'Sargento Mayor 2'),
+(12, 'Sargento Mayor 3'),
+(13, 'Sargento 1'),
+(14, 'Sargento 2');
 
 -- --------------------------------------------------------
 
@@ -60,14 +94,39 @@ CREATE TABLE IF NOT EXISTS `personal` (
   `direccion` text,
   `departamento` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `personal`
 --
 
 INSERT INTO `personal` (`id`, `cedula`, `grado`, `apellidos`, `nombres`, `direccion`, `departamento`) VALUES
-(3, '12345678', 'Primer', 'Ovalles', 'Omar', 'Calle 20 entre carrera 25 y avenida Venezuela.', 'Informatica');
+(3, '12345678x', 'id_grado', 'Ovalles', 'Omar', NULL, 'Informaticax'),
+(4, '12363656', 'Primero', 'Carlos', 'Rodriguez', 'Caracas, Av. Plaza, Edificio Homero', 'Narcoticos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personal_inspeccion`
+--
+
+CREATE TABLE IF NOT EXISTS `personal_inspeccion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_inspeccion` varchar(255) DEFAULT NULL,
+  `id_personal` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Volcado de datos para la tabla `personal_inspeccion`
+--
+
+INSERT INTO `personal_inspeccion` (`id`, `id_inspeccion`, `id_personal`) VALUES
+(13, '21', '3'),
+(14, '21', '3'),
+(15, '22', '4'),
+(16, '22', '4'),
+(17, '23', '4');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

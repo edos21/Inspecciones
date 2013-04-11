@@ -1,3 +1,8 @@
+<?php 
+	
+	include 'backend/query-cuatro.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,9 +33,9 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="">Reporte 1</a></li>
-							<li><a href="">Reporte 2</a></li>
-							<li><a href="">Reporte 3</a></li>
+							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="reporteempresa.php">Por Empresa</a></li>
+							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -40,26 +45,37 @@
 			<div class="col_12" id="cpersonal">
 				<h3>Modificar Inspecciones</h3>
 				<form method="post" action="backend/modificarinspeccion.php">
-					<label for="rif">RIF</label>
-					<input type="text" name="rif" id="rif" placeholder="RIF de la Empresa">
+					<?php foreach($contents as $content): ?>
 					<label for="empresa">Empresa</label>
-					<input type="text" name="empresa" id="empresa" placeholder="Nombre de la Empresa"><br><br>
+					<input type="text" name="empresa" id="empresa" value="<?php echo $content['empresa']; ?>">
+					<label for="fecha">Fecha</label>
+					<input type="date" name="fecha" id="fecha" value="<?php echo $content['fecha']; ?>"><br><br>
 					<label for="telefono">Telefono</label>
-					<input type="text" name="telefono" id="telefono" placeholder="Telefono de la Empresa">
+					<input type="text" name="telefono" id="telefono" value="<?php echo $content['telefono']; ?>">
 					<label for="region">Region</label>
-					<input type="text" name="region" id="region" placeholder="Region de la Empresa"><br><br>
+					<input type="text" name="region" id="region" value="<?php echo $content['region']; ?>"><br><br>
 					<label for="direccion">Direccion</label><br>
-					<textarea name="direccion" id="direccion" placeholder="Direccion de la Empresa" cols="55"></textarea><br><br>
+					<textarea name="direccion" id="direccion" cols="55">
+						<?php echo $content['direccion']; ?>
+					</textarea><br><br>
 					<label for="ut">U.T.</label>
-					<input type="text" name="ut" id="ut" placeholder="Unidades Tributarias">
-					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
+					<input type="text" name="ut" id="ut" value="<?php echo $content['unidadest']; ?>">
+					<label for="vehiculo">Vehiculos</label>
+					<input type="text" name="vehiculo" id="vehiculo" value="<?php echo $content['vehiculo']; ?>">
+					<label for="habitabilidad">Habitabilidad</label>
+					<input type="text" name="habitabilidad" id="habitabilidad" value="<?php echo $content['habitabilidad']; ?>"><br><br>
 					<label for="inspectores">Inspectores</label>
-					<select id="inspectores" name="inspectores" multiple="multiple" class="fancy">
-						<option value="id">Nombres + Apellidos</option>
-						<option value="id">Nombres + Apellidos</option>
+					
+					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
+						<?php foreach ($ins as $in): ?>
+						<option value="<?php echo $in['id']; ?>"><?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
+						<?php endforeach; ?>
 					</select><br><br>
+					
+					<input type="hidden" value="<?php echo $content['id']; ?>" name="id">
 					<input type="submit" class="green" value="Modificar">
 					<input type="reset" class="orange" value="Cancelar">
+					<?php endforeach; ?>
 				</form>
 			</div>
 		</div>

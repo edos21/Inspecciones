@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-personal.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,9 +33,9 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="">Reporte 1</a></li>
-							<li><a href="">Reporte 2</a></li>
-							<li><a href="">Reporte 3</a></li>
+							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="reporteempresa.php">Por Empresa</a></li>
+							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -40,10 +45,11 @@
 			<div class="col_12" id="cpersonal">
 				<h3>Carga de Inspecciones</h3>
 				<form method="post" action="backend/cargainspeccion.php">
-					<label for="rif">RIF</label>
-					<input type="text" name="rif" id="rif" placeholder="RIF de la Empresa">
 					<label for="empresa">Empresa</label>
-					<input type="text" name="empresa" id="empresa" placeholder="Nombre de la Empresa"><br><br>
+					<input type="text" name="empresa" id="empresa" placeholder="Nombre de la Empresa">
+					<label for="fecha">Fecha</label>
+					<input type="date" name="fecha" id="fecha" placeholder="Fecha de la Inspecci&oacute;n">
+					<br><br>
 					<label for="telefono">Telefono</label>
 					<input type="text" name="telefono" id="telefono" placeholder="Telefono de la Empresa">
 					<label for="region">Region</label>
@@ -52,12 +58,16 @@
 					<textarea name="direccion" id="direccion" placeholder="Direccion de la Empresa" cols="55"></textarea><br><br>
 					<label for="ut">U.T.</label>
 					<input type="text" name="ut" id="ut" placeholder="Unidades Tributarias">
-					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
+					<label for="vehiculo">Vehiculos</label>
+					<input type="text" name="vehiculo" id="vehiculo" placeholder="Cantidad de Vehiculos">
+					<label for="habitabilidad">Habitabilidad</label>
+					<input type="text" name="habitabilidad" id="habitabilidad" placeholder="Habitabilidad">
+					<br><br>
 					<label for="inspectores">Inspectores</label>
-					<!--Cargar en value el id del personal de la BD-->
-					<select id="inspectores" name="inspectores" multiple="multiple" class="fancy">
-						<option value="id">Nombres + Apellidos</option>
-						<option value="id">Nombres + Apellidos</option>
+					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
+						<?php foreach ($ins as $in): ?>
+						<option value="<?php echo $in['id']; ?>"><?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
+						<?php endforeach; ?>
 					</select><br><br>
 					<input type="submit" class="green" value="Guardar">
 					<input type="reset" class="orange" value="Cancelar">

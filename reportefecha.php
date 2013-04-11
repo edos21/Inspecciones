@@ -13,7 +13,7 @@
 		<header>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a>Personal</a>
 						<ul>
 							<li><a href="cargapersonal.php">Cargar</a></li>
@@ -28,7 +28,7 @@
 					</li>
 					<li><a>Reportes</a>
 						<ul>
-							<li><a href="reportefecha.php">Por Fecha</a></li>
+							<li><a href="#">Por Fecha</a></li>
 							<li><a href="reporteempresa.php">Por Empresa</a></li>
 							<li><a href="reportepersonal.php">Por Personal</a></li>
 						</ul>
@@ -36,6 +36,18 @@
 				</ul>
 			</nav>
 		</header>
-
+		<div id="main">
+			<div class="col_12" id="cpersonal">
+				<h3>Reporte Por Fecha</h3>
+				<form method="post" action="consultar1.php">
+					<label for="desde">Desde</label>
+					<input type="date" name="desde" id="desde" pLaceholder="Desde la fecha">
+					<label for="hasta">Hasta</label>
+					<input type="date" name="hasta" id="hasta" pLaceholder="Hasta la fecha">
+					<br><br>
+					<input type="submit" class="green" value="Buscar">
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
