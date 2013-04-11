@@ -64,6 +64,10 @@
 					<input type="text" name="habitabilidad" id="habitabilidad" placeholder="Habitabilidad">
 					<br><br>
 					<label for="inspectores">Inspectores</label>
+<<<<<<< HEAD
+=======
+					<!--Cargar en value el id del personal de la BD-->
+>>>>>>> c377359637bec3a46f4313eb8b155c0be80d0872
 					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
 						<?php foreach ($ins as $in): ?>
 						<option value="<?php echo $in['id']; ?>"><?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>

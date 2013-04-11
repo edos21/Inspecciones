@@ -46,10 +46,17 @@
 				<h3>Modificar Inspecciones</h3>
 				<form method="post" action="backend/modificarinspeccion.php">
 					<?php foreach($contents as $content): ?>
+<<<<<<< HEAD
 					<label for="empresa">Empresa</label>
 					<input type="text" name="empresa" id="empresa" value="<?php echo $content['empresa']; ?>">
 					<label for="fecha">Fecha</label>
 					<input type="date" name="fecha" id="fecha" value="<?php echo $content['fecha']; ?>"><br><br>
+=======
+					<label for="rif">RIF</label>
+					<input type="text" name="rif" id="rif" value="<?php echo $content['rif']; ?>">
+					<label for="empresa">Empresa</label>
+					<input type="text" name="empresa" id="empresa" value="<?php echo $content['empresa']; ?>"><br><br>
+>>>>>>> c377359637bec3a46f4313eb8b155c0be80d0872
 					<label for="telefono">Telefono</label>
 					<input type="text" name="telefono" id="telefono" value="<?php echo $content['telefono']; ?>">
 					<label for="region">Region</label>
@@ -60,10 +67,27 @@
 					</textarea><br><br>
 					<label for="ut">U.T.</label>
 					<input type="text" name="ut" id="ut" value="<?php echo $content['unidadest']; ?>">
+<<<<<<< HEAD
 					<label for="vehiculo">Vehiculos</label>
 					<input type="text" name="vehiculo" id="vehiculo" value="<?php echo $content['vehiculo']; ?>">
 					<label for="habitabilidad">Habitabilidad</label>
 					<input type="text" name="habitabilidad" id="habitabilidad" value="<?php echo $content['habitabilidad']; ?>"><br><br>
+=======
+					<?php 
+
+						$vehiculo = $content['vehiculo'];
+
+						if ($vehiculo != 'Si') {
+					?>		
+					Posee Vehiculo <input type="checkbox" name="vehiculo"><br><br>
+					<?php
+						
+						} else {
+
+					?>
+					Posee Vehiculo <input type="checkbox" name="vehiculo" checked="checked"><br><br>	
+					<?php } ?>
+>>>>>>> c377359637bec3a46f4313eb8b155c0be80d0872
 					<label for="inspectores">Inspectores</label>
 					
 					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
