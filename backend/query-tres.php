@@ -27,7 +27,6 @@
 			'grado' => $row['grado'],
 			'apellidos' => $row['apellidos'],
 			'nombres' => $row['nombres'],
-			'direccion' => $row['direccion'],
 			'departamento' => $row['departamento']
 		);
 

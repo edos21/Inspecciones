@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-grado.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -44,7 +49,9 @@
 					<input type="text" name="cedula" id="cedula" placeholder="Ingresar Cedula">
 					<label for="grado">Grado</label>
 					<select name="grado" id="grado">
-						<option value="id_grado">Grado</option>
+						<?php foreach ($grados as $grado): ?>
+						<option value="<?php echo $grado['id']; ?>"><?php echo $grado['descripcion'];?></option>
+						<?php endforeach; ?>
 					</select><br><br>
 					<label for="apellidos">Apellidos</label>
 					<input type="text" name="apellidos" id="apellidos" placeholder="Ingresar Apellidos">

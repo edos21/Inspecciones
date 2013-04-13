@@ -9,7 +9,6 @@
 		grado = :grado,
 		apellidos = :apellidos,
 		nombres = :nombres,
-		direccion = :direccion,
 		departamento = :departamento WHERE
 		id = :id';
 
@@ -18,7 +17,6 @@
 		$s->bindValue(':grado', $_POST['grado']);
 		$s->bindValue(':apellidos',$_POST['apellidos']);
 		$s->bindValue(':nombres',$_POST['nombres']);
-		$s->bindValue(':direccion',$_POST['direccion']);
 		$s->bindValue(':departamento',$_POST['departamento']);
 		$s->bindValue(':id',$_POST['id']);
 		$s->execute();

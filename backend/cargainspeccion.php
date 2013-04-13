@@ -2,34 +2,27 @@
 
 	include 'includes/conexion.php';
 
-	$vehiculo = isset($_POST['vehiculo']);
-	
-	if ($vehiculo == true) {
-		$p_vehiculo = 'Si';
-	}
-	else {
-		$p_vehiculo = 'No';
-	}
-
 	try {
 
 		$sql = 'INSERT INTO cinspecciones SET
-		rif = :rif,
 		empresa = :empresa,
+		fecha = :fecha,
 		telefono = :telefono,
 		region = :region,
 		direccion = :direccion,
 		unidadest = :ut,
-		vehiculo = :vehiculo';
+		vehiculo = :vehiculo,
+		habitabilidad = :habitabilidad';
 
 		$s = $pdo->prepare($sql);
-		$s->bindValue(':rif',$_POST['rif']);
 		$s->bindValue(':empresa',$_POST['empresa']);
+		$s->bindValue(':fecha',$_POST['fecha']);
 		$s->bindValue(':telefono',$_POST['telefono']);
 		$s->bindValue(':region',$_POST['region']);
 		$s->bindValue(':direccion',$_POST['direccion']);
 		$s->bindValue(':ut',$_POST['ut']);
-		$s->bindValue(':vehiculo',$p_vehiculo);
+		$s->bindValue(':vehiculo',$_POST['vehiculo']);
+		$s->bindValue(':habitabilidad',$_POST['habitabilidad']);
 		$s->execute();
 
 	}

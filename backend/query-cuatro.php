@@ -23,20 +23,21 @@
 
 		$contents[] = array(
 			'id' => $row['id'],
-			'rif' => $row['rif'],
 			'empresa' => $row['empresa'],
+			'fecha' => $row['fecha'],
 			'telefono' => $row['telefono'],
 			'region' => $row['region'],
 			'direccion' => $row['direccion'],
 			'unidadest' => $row['unidadest'],
-			'vehiculo' => $row['vehiculo']
+			'vehiculo' => $row['vehiculo'],
+			'habitabilidad' => $row['habitabilidad']
 		);
 
 	}
 
 	try {
 
-		$sql = 'SELECT id,nombres,apellidos FROM personal';
+		$sql = 'SELECT personal.id, personal.nombres, personal.apellidos, grado.descripcion FROM personal INNER JOIN grado on grado.id=personal.grado ORDER BY grado.id';
 
 		$s = $pdo->prepare($sql);
 		$s->execute();
@@ -55,7 +56,8 @@
 		$ins[] = array(
 			'id' => $row['id'],
 			'nombre' => $row['nombres'],
-			'apellido' => $row['apellidos']
+			'apellido' => $row['apellidos'],
+			'descripcion' => $row['descripcion']
 		);
 
 	}

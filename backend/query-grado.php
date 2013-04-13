@@ -4,7 +4,7 @@
 
 	try {
 
-		$sql = 'SELECT id,empresa,region FROM cinspecciones ORDER BY id DESC';
+		$sql = 'SELECT id,descripcion FROM grado';
 
 		$s = $pdo->prepare($sql);
 		$s->execute();
@@ -20,12 +20,11 @@
 
 	while ($row = $s->fetch()) {
 
-		$contents[] = array(
+		$grados[] = array(
 			'id' => $row['id'],
-			'empresa' => $row['empresa'],
-			'region' => $row['region']
+			'descripcion' => $row['descripcion']
 		);
 
-	}
+	}	
 
 ?>

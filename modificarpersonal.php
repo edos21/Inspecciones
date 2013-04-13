@@ -1,6 +1,7 @@
 <?php 
 
 	include 'backend/query-tres.php';
+	include 'backend/query-grado.php';
 
 ?>
 <!DOCTYPE html>
@@ -49,24 +50,15 @@
 					<label for="cedula">Cedula</label>
 					<input type="text" name="cedula" id="cedula" value="<?php echo $content['cedula']; ?>">
 					<label for="grado">Grado</label>
-<<<<<<< HEAD
 					<select name="grado" id="grado">
-						<option value="id_grado">Grado</option>
+						<?php foreach ($grados as $grado): ?>
+						<option value="<?php echo $grado['id']; ?>"><?php echo $grado['descripcion'];?></option>
+						<?php endforeach; ?>
 					</select><br><br>
-=======
-					<input type="text" name="grado" id="grado" value="<?php echo $content['grado']; ?>"><br><br>
->>>>>>> c377359637bec3a46f4313eb8b155c0be80d0872
 					<label for="apellidos">Apellidos</label>
 					<input type="text" name="apellidos" id="apellidos" value="<?php echo $content['apellidos']; ?>">
 					<label for="nombres">Nombres</label>
 					<input type="text" name="nombres" id="nombres" value="<?php echo $content['nombres']; ?>"><br><br>
-<<<<<<< HEAD
-=======
-					<label for="direccion">Ingresar Direccion</label><br>
-					<textarea name="direccion" id="direccion" cols="55">
-					<?php echo $content['direccion']; ?>	
-					</textarea><br><br>
->>>>>>> c377359637bec3a46f4313eb8b155c0be80d0872
 					<label for="departamento">Departamento</label>
 					<input type="text" name="departamento" id="departamento" value="<?php echo $content['departamento']; ?>"><br><br>
 					<input type="hidden" value="<?php echo $content['id']; ?>" name="id">
