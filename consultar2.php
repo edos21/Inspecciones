@@ -48,9 +48,28 @@
 						<th>Habitabilidad</th>
 					</thead>
 					<tbody>
+						<?php 
+
+							$totalut = 0;
+							$totalvehiculo = 0;
+							$totalhabitabilidad = 0;
+
+							foreach($datos as $dato):
+
+							$id = $dato['id'];
+
+							$ut = $dato['ut'];
+							$vehiculo = $dato['vehiculo'];
+							$habitabilidad = $dato['habitabilidad'];
+
+							$totalut += $ut; 
+							$totalvehiculo += $vehiculo;
+							$totalhabitabilidad += $habitabilidad;
+
+						?>
 						<tr>
 							<td>
-								Edosistems
+								<?php echo $dato['empresa']; ?>
 							</td>
 							<td>
 								Teniente David Palacios
@@ -58,46 +77,30 @@
 								<br>Soldadito Yonaikel
 							</td>
 							<td>
-								10
+								<?php echo $ut; ?>
 							</td>
 							<td>
-								5
+								<?php echo $vehiculo; ?>
 							</td>
 							<td>
-								8
+								<?php echo $habitabilidad; ?>
 							</td>
 						</tr>
-						<tr>
-							<td>
-								Edosistems
-							</td>
-							<td>
-								Soldadito Yonaikel
-							</td>
-							<td>
-								10
-							</td>
-							<td>
-								5
-							</td>
-							<td>
-								8
-							</td>
-						</tr>
+						<?php endforeach; ?>
 						<tr>
 							<th colspan="2">
 								Total
 							</th>
 							<td>
-								20
+								<?php echo $totalut; ?>
 							</td>
 							<td>
-								10
+								<?php echo $totalvehiculo; ?>
 							</td>
 							<td>
-								16
+								<?php echo $totalhabitabilidad; ?>
 							</td>
-						</tr>
+						</tr>					
 					</tbody>
 				</table>
 			</div>

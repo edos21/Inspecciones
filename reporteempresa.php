@@ -1,3 +1,30 @@
+<?php
+
+	include 'backend/includes/conexion.php';
+
+	try {
+
+		$sql = 'SELECT DISTINCT empresa FROM cinspecciones';
+
+		$s = $pdo->prepare($sql);
+		$s->execute();
+
+	}
+
+	catch (PDOException $e) {
+
+		echo 'Ha ocurrido un error.';
+		exit();
+
+	}
+
+	while ($row = $s->fetch()) {
+
+		$empresas[] = array('empresa' => $row['empresa']);
+
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -39,11 +66,13 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Reporte Por Empresa</h3>
-				<form method="post" action="consultar2.php">
+				<form method="post" action="rempresa.php">
 					<label for="empresa">Empresa</label>
 					<select id="empresa" name="empresa">
-						<option>Seleccione la Empresa</option>
-						<!--Cargar options con los nombres de empresa, cargas unicas, usando SELECT DISTINCT-->
+						<?php foreach ($empresas as $empresa): ?>
+						<?php $nombre = $empresa['empresa']; ?>
+						<?php echo '<option value="' . $nombre . '">' . $nombre . '</option>'; ?>
+						<?php endforeach; ?>
 					</select>
 					<br><br>
 					<input type="submit" class="green" value="Buscar">

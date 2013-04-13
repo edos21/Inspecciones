@@ -9,8 +9,6 @@
 		$s = $pdo->prepare($sql);
 		$s->execute();
 
-
-
 	}
 
 	catch (PDOException $e) {
