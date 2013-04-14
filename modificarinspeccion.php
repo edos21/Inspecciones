@@ -66,12 +66,6 @@
 					<input type="text" name="habitabilidad" id="habitabilidad" value="<?php echo $content['habitabilidad']; ?>"><br><br>
 					<label for="inspectores">Inspectores</label>
 					
-					<select id="inspectores" name="inspectores[]" multiple="multiple" class="fancy">
-						<?php foreach ($ins as $in): ?>
-						<option value="<?php echo $in['id']; ?>"><?php echo $in['descripcion']; ?>&nbsp;<?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
-						<?php endforeach; ?>
-					</select><br><br>
-					
 					<input type="hidden" value="<?php echo $content['id']; ?>" name="id">
 					<input type="submit" class="green" value="Modificar">
 					<input type="reset" class="orange" value="Cancelar">

@@ -35,36 +35,6 @@
 
 	}
 
-	$inspectores = $_POST['inspectores'];
-
-	if ($inspectores) {
-
-		foreach($inspectores as $inspector):
-
-			try {
-
-				$sql = 'UPDATE personal_inspeccion SET
-				id_personal = :id_personal WHERE 
-				id_inspeccion = :id_inspeccion';
-
-				$s = $pdo->prepare($sql);
-				$s->bindValue(':id_inspeccion',$id);
-				$s->bindValue(':id_personal',$inspector);
-				$s->execute();
-
-			}
-
-			catch (PDOException $e) {
-
-				echo 'Ha ocurrido un error.' . $e->getMessage();
-				exit();
-
-			}
-
-		endforeach;
-
-	}	
-
 ?>
 <script type="text/javascript">
 	alert('Inspeccion modificada.');
