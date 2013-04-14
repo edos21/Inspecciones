@@ -4,35 +4,26 @@
 
 	$id = $_POST['id'];
 
-	$vehiculo = isset($_POST['vehiculo']);
-	
-	if ($vehiculo == true) {
-		$p_vehiculo = 'Si';
-	}
-	else {
-		$p_vehiculo = 'No';
-	}
-
 	try {
 
 		$sql = 'UPDATE cinspecciones SET
-		rif = :rif,
 		empresa = :empresa,
 		telefono = :telefono,
 		region = :region,
 		direccion = :direccion,
 		unidadest = :unidadest,
-		vehiculo = :vehiculo WHERE
+		vehiculo = :vehiculo,
+		habitabilidad = :habitabilidad WHERE
 		id = :id';
 
 		$s = $pdo->prepare($sql);
-		$s->bindValue(':rif',$_POST['rif']);
 		$s->bindValue(':empresa', $_POST['empresa']);
 		$s->bindValue(':telefono',$_POST['telefono']);
 		$s->bindValue(':region',$_POST['region']);
 		$s->bindValue(':direccion',$_POST['direccion']);
 		$s->bindValue(':unidadest',$_POST['ut']);
-		$s->bindValue(':vehiculo',$p_vehiculo);
+		$s->bindValue(':vehiculo',$_POST['vehiculo']);
+		$s->bindValue(':habitabilidad',$_POST['habitabilidad']);
 		$s->bindValue(':id',$id);
 		$s->execute();
 
@@ -60,6 +51,7 @@
 				$s->bindValue(':id_inspeccion',$id);
 				$s->bindValue(':id_personal',$inspector);
 				$s->execute();
+
 
 			}
 
