@@ -23,12 +23,13 @@
 	while ($row = $s->fetch()) {
 
 		$datos[] = array('id' => $row['id'], 'empresa' => $row['empresa'], 'ut' => $row['unidadest'], 'vehiculo' => $row['vehiculo'], 'habitabilidad' => $row['habitabilidad']);
+
 		$id = $row['id'];
 		
 	}
 	
 	
-	
+
 
 	include 'consultar2.php';
 	exit();

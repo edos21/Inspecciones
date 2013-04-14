@@ -93,7 +93,6 @@
 							</td>
 						</tr>
 						<?php endforeach; ?>
-						
 						<tr>
 							<th colspan="2">
 								Total
