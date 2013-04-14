@@ -39,7 +39,7 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Reporte Por Fecha</h3>
-				<form method="post" action="consultar1.php">
+				<form method="post" action="rfecha.php">
 					<label for="desde">Desde</label>
 					<input type="date" name="desde" id="desde" pLaceholder="Desde la fecha">
 					<label for="hasta">Hasta</label>

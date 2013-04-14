@@ -4,12 +4,10 @@
 
 	try {
 
-		$sql = 'SELECT personal.id, personal.nombres, personal.apellidos, grado.descripcion FROM personal INNER JOIN grado on grado.id=personal.grado ORDER BY grado.id';
+		$sql = 'SELECT personal.id, personal.nombres, personal.apellidos, grado.descripcion FROM personal INNER JOIN grado ON grado.id=personal.grado ORDER BY grado.id';
 
 		$s = $pdo->prepare($sql);
 		$s->execute();
-
-
 
 	}
 
@@ -28,7 +26,6 @@
 			'apellido' => $row['apellidos'],
 			'descripcion' => $row['descripcion']
 		);
-
 	}	
 
 ?>
