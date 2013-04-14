@@ -52,7 +52,6 @@
 				$s->bindValue(':id_personal',$inspector);
 				$s->execute();
 
-
 			}
 
 			catch (PDOException $e) {

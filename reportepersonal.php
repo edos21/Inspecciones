@@ -1,3 +1,8 @@
+<?php 
+
+	include 'backend/query-personal2.php';
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -39,11 +44,12 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Reporte Por Personal</h3>
-				<form method="post" action="consultar3.php">
+				<form method="post" action="rpersonal.php">
 					<label for="nombre">Nombre</label>
 					<select id="nombre" name="nombre">
-						<option>Seleccione el Personal</option>
-						<!--Cargar options con los nombres de el personal, cargas unicas, usando SELECT DISTINCT "rango + nombre + apellido"-->
+						<?php foreach ($ins as $in): ?>
+						<option value="<?php echo $in['id']; ?>"><?php echo $in['descripcion']; ?>&nbsp;<?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
+						<?php endforeach; ?>
 					</select>
 					<br><br>
 					<input type="submit" class="green" value="Buscar">
