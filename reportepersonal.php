@@ -2,6 +2,12 @@
 
 	include 'backend/query-personal2.php';
 
+	if (isset($_GET['no']) == true) {
+
+		echo '<script type="text/javascript">alert("No se ha encontrado ningun registro que coincida con ese nombre.")</script>';
+
+	}
+
 ?>
 <!DOCTYPE html>
 <html>

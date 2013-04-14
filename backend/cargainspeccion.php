@@ -92,6 +92,17 @@
 
 	}
 
+	/*require_once("../dompdf/dompdf_config.inc.php");
+	
+	$html = 'Hola.';
+	
+	$dompdf = new DOMPDF();
+	
+	$dompdf->load_html($html);
+	$dompdf->render();
+	$dompdf->stream("ejemplo.pdf");
+	*/
+
 ?>
 <script type="text/javascript">
 	alert('La inspeccion ha sido cargada.');

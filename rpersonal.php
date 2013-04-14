@@ -2,15 +2,13 @@
 
 	include 'backend/includes/conexion.php';
 
-	$id1 = $_POST['nombre'];
-
 	try {
 
 		$sql = 'SELECT * FROM personal_inspeccion WHERE
 		id_personal  = :id';
 
 		$s = $pdo->prepare($sql);
-		$s->bindValue(':id',$id1);
+		$s->bindValue(':id',$_POST['nombre']);
 		$s->execute();
 
 	}
@@ -25,6 +23,13 @@
 	while ($row = $s->fetch()) {
 
 		$datos2[] = array('id_inspeccion' => $row['id_inspeccion']);
+
+	}
+
+	if ($s->rowCount() == 0) {
+
+		header('Location: reportepersonal.php?no=true');
+		exit();
 
 	}
 

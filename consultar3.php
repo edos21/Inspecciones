@@ -79,7 +79,9 @@
 
 								$id = $row['id'];
 							
-							}	 
+							}
+
+							endforeach;	 
 
 							foreach($datos as $dato):
 
@@ -122,8 +124,6 @@
 						<?php 
 							
 							endforeach; 
-							
-							endforeach;
 						?>
 						<tr>
 							<th colspan="2">
