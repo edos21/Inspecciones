@@ -33,7 +33,11 @@
 
                 echo 'Ha ocurrido un error.' . $e->getMessage();
 
+<<<<<<< HEAD
         }
+=======
+	}
+>>>>>>> 5a13034e53559dee4f5656eafbb9c6807f14b95d
 
 ?>
 <script type="text/javascript">

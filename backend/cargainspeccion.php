@@ -223,4 +223,23 @@ else{
 
 	}
 
+<<<<<<< HEAD
 ?>
+=======
+	/*require_once("../dompdf/dompdf_config.inc.php");
+	
+	$html = 'Hola.';
+	
+	$dompdf = new DOMPDF();
+	
+	$dompdf->load_html($html);
+	$dompdf->render();
+	$dompdf->stream("ejemplo.pdf");
+	*/
+
+?>
+<script type="text/javascript">
+	alert('La inspeccion ha sido cargada.');
+	location.href = '../cargainspeccion.php';
+</script>
+>>>>>>> 5a13034e53559dee4f5656eafbb9c6807f14b95d
