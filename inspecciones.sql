@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-04-2013 a las 01:40:38
+-- Tiempo de generación: 14-04-2013 a las 18:17:54
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -37,17 +37,7 @@ CREATE TABLE IF NOT EXISTS `cinspecciones` (
   `vehiculo` varchar(10) DEFAULT NULL,
   `habitabilidad` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
-
---
--- Volcado de datos para la tabla `cinspecciones`
---
-
-INSERT INTO `cinspecciones` (`id`, `empresa`, `fecha`, `telefono`, `region`, `direccion`, `unidadest`, `vehiculo`, `habitabilidad`) VALUES
-(24, 'Edosistems', '2013-04-08', '02512321578', 'Lara', 'Carrera 14', '8', '3', '7'),
-(25, 'ovpersonal', '2013-04-11', '2335886', 'lara', 'calle 15', '2', '3', '4'),
-(26, 'Edosistems', '2013-04-10', '02512321578', 'Lara', 'carrera 14', '2', '3', '4'),
-(27, 'marcos', '2013-04-01', '2335886', 'lara', 'ascsa', '2', '1', '5');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
 
 -- --------------------------------------------------------
 
@@ -95,17 +85,14 @@ CREATE TABLE IF NOT EXISTS `personal` (
   `nombres` varchar(200) DEFAULT NULL,
   `departamento` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `personal`
 --
 
 INSERT INTO `personal` (`id`, `cedula`, `grado`, `apellidos`, `nombres`, `departamento`) VALUES
-(3, '12345678x', '13', 'Rodriguez', 'Juan', 'Informaticax'),
-(4, '12363656', '7', 'Cabello', 'Carlos', 'Narcoticos'),
-(5, '1234567', '2', 'Perez', 'Pedro', 'Educacion'),
-(6, '7894522', '7', 'Martinez', 'Jose', 'Narcoticos');
+(8, '12421321', '', '', '', 'Narcoticos');
 
 -- --------------------------------------------------------
 
@@ -118,19 +105,7 @@ CREATE TABLE IF NOT EXISTS `personal_inspeccion` (
   `id_inspeccion` varchar(255) DEFAULT NULL,
   `id_personal` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
-
---
--- Volcado de datos para la tabla `personal_inspeccion`
---
-
-INSERT INTO `personal_inspeccion` (`id`, `id_inspeccion`, `id_personal`) VALUES
-(18, '24', '3'),
-(19, '24', '5'),
-(20, '25', '3'),
-(21, '25', '6'),
-(22, '26', '3'),
-(23, '27', '6');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=61 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

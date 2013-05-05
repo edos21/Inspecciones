@@ -36,6 +36,7 @@
 							<li><a href="reportefecha.php">Por Fecha</a></li>
 							<li><a href="reporteempresa.php">Por Empresa</a></li>
 							<li><a href="reportepersonal.php">Por Personal</a></li>
+							<li><a href="reportepersonal2.php">Personal/Fecha</a></li>
 						</ul>
 					</li>
 				</ul>

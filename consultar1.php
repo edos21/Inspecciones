@@ -31,6 +31,7 @@
 							<li><a href="reportefecha.php">Por Fecha</a></li>
 							<li><a href="reporteempresa.php">Por Empresa</a></li>
 							<li><a href="reportepersonal.php">Por Personal</a></li>
+							<li><a href="reportepersonal2.php">Personal/Fecha</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -48,56 +49,65 @@
 						<th>Habitabilidad</th>
 					</thead>
 					<tbody>
+						<?php 
+
+							$totalut = 0;
+							$totalvehiculo = 0;
+							$totalhabitabilidad = 0;
+
+							foreach($datos as $dato):
+
+							$id = $dato['id'];
+
+							$ut = $dato['ut'];
+							$vehiculo = $dato['vehiculo'];
+							$habitabilidad = $dato['habitabilidad'];
+
+							$totalut += $ut; 
+							$totalvehiculo += $vehiculo;
+							$totalhabitabilidad += $habitabilidad;
+
+						?>
 						<tr>
 							<td>
-								Edosistems
+								<?php echo $dato['empresa']; ?>
 							</td>
 							<td>
-								Teniente David Palacios
-								<br>Capitan Sanduche
-								<br>Soldadito Yonaikel
+								<?php
+								
+								include 'backend/auxiliar.php';
+								
+								foreach($infos as $info):
+								echo $info['descripcion'].' '.$info['nombres'].' '.$info['apellidos'].'<br>';
+								$infos = "";
+
+								endforeach; ?>
 							</td>
 							<td>
-								10
+								<?php echo $ut; ?>
 							</td>
 							<td>
-								5
+								<?php echo $vehiculo; ?>
 							</td>
 							<td>
-								8
+								<?php echo $habitabilidad; ?>
 							</td>
 						</tr>
-						<tr>
-							<td>
-								Ovpersonal
-							</td>
-							<td>
-								Soldadito Yonaikel
-							</td>
-							<td>
-								3
-							</td>
-							<td>
-								1
-							</td>
-							<td>
-								1
-							</td>
-						</tr>
+						<?php endforeach; ?>
 						<tr>
 							<th colspan="2">
 								Total
 							</th>
 							<td>
-								13
+								<?php echo $totalut; ?>
 							</td>
 							<td>
-								6
+								<?php echo $totalvehiculo; ?>
 							</td>
 							<td>
-								9
+								<?php echo $totalhabitabilidad; ?>
 							</td>
-						</tr>
+						</tr>					
 					</tbody>
 				</table>
 			</div>

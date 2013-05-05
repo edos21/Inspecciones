@@ -1,3 +1,14 @@
+<?php 
+
+	include 'backend/query-personal2.php';
+
+	if (isset($_GET['no']) == true) {
+
+		echo '<script type="text/javascript">alert("No se ha encontrado ningun registro que coincida con ese nombre.")</script>';
+
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,6 +42,7 @@
 							<li><a href="reportefecha.php">Por Fecha</a></li>
 							<li><a href="reporteempresa.php">Por Empresa</a></li>
 							<li><a href="#">Por Personal</a></li>
+							<li><a href="reportepersonal2.php">Personal/Fecha</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -39,12 +51,14 @@
 		<div id="main">
 			<div class="col_12" id="cpersonal">
 				<h3>Reporte Por Personal</h3>
-				<form method="post" action="consultar3.php">
+				<form method="post" action="rpersonal.php">
 					<label for="nombre">Nombre</label>
 					<select id="nombre" name="nombre">
-						<option>Seleccione el Personal</option>
-						<!--Cargar options con los nombres de el personal, cargas unicas, usando SELECT DISTINCT "rango + nombre + apellido"-->
+						<?php foreach ($ins as $in): ?>
+						<option value="<?php echo $in['id']; ?>"><?php echo $in['descripcion']; ?>&nbsp;<?php echo $in['nombre']; ?>&nbsp;<?php echo $in['apellido']; ?></option>
+						<?php endforeach; ?>
 					</select>
+					
 					<br><br>
 					<input type="submit" class="green" value="Buscar">
 				</form>
