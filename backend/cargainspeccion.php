@@ -25,6 +25,26 @@
 
         $cant = $s1->rowCount();
 
+        try {
+
+                $sql = 'SELECT * FROM cinspecciones WHERE YEAR(fecha) = :fecha';
+
+                $s2 = $pdo->prepare($sql);
+                $s2->bindValue(':fecha',$date);
+                $s2->execute();
+
+        }
+
+        catch (PDOException $e) {
+
+                echo 'Ha ocurrido un error.';
+                exit();
+
+        }
+
+        $tot = $s2->rowCount();
+        $total = str_pad(($tot + 1),4,"0",STR_PAD_LEFT);
+
         if ($cant < 1) {
 
                 try {
@@ -168,14 +188,15 @@
                 endforeach;
 
                 
-                $html = '<img src="../css/cintillo.jpg" style="margin-left:80px; width:450px" /> <br /> <br />
-                                <h2 style="margin-left:110px; margin-top:50px">HOJA DE DESIGNACION DE INSPECTORES</h2><br />
-                                <div style="text-align:justify; font-size:14px; margin-left:50px; width:490px">Por medio de la presente se designa como inspectores '.$aux.' para realizar la inspecci&oacute;n t&eacute;cnica
+                $html = '<img src="../css/cintillo.jpg" style="margin-left:80px; margin-top:40px; width:450px" /> <br /> <br />
+                				<h3 style="margin-left:450px;">N&deg;: '.$total.'-'.$anno.'</h3>
+                                <h2 style="margin-left:110px; margin-top:30px">HOJA DE DESIGNACION DE INSPECTORES</h2><br />
+                                <div style="font-family: Arial;text-align:justify; font-size:14px; margin-left:50px; width:490px">Por medio de la presente se designa como inspectores '.$aux.' para realizar la inspecci&oacute;n t&eacute;cnica
                                 de la empresa <b> '.$empresa.' </b>  ubicada en '.$direccion.', Estado '.$region.'. Tlf. '.$telefono.'.</div><br /> <br />
                                 <div style="font-size:14px; margin-left:50px; width:480px">Designaci&oacute;n hecha para su conocimiento y dem&aacute;s fines legales consiguientes,  a los
                                 '.$dia.' d&iacute;as del mes de '.$month.' del a&ntilde;o '.$anno.'.</div><br /> <br /> <br />
                                 
-                                <div style="font-size:12px; margin-left:50px;width:480px; text-align:center;"><b>DIOS  Y  FEDERACI&Oacute;N<br /> <br /><br /><br />
+                                <div style="font-size:12px; margin-left:50px;width:480px; text-align:center;"><b>DIOS  Y  FEDERACI&Oacute;N<br /> <br /><br /><br /><br />
                                 JULIO CESAR CONQUISTA LIRA<br />
                                 CORONEL<br />
                                 JEFE DE LA OFICINA DE SUPERVISION Y ASESORAMIENTO TECNICO<br />
